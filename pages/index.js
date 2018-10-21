@@ -1,27 +1,32 @@
-import styled from 'styled-components';
+/**
+ * DATA
+ */
+import GAMES from '~/data/games';
 
 /**
  * LAYOUT
  */
 import Layout from '~/layouts/app';
 
+/**
+ * COMPONENTS
+ */
+import GameCard from '~/components/GameCard';
+
 const HomePage = () => (
   <Layout>
     <section className="section">
-      <div className="container">
-        <h1 className="title">
-          <__Text>Hello World</__Text>
-        </h1>
-        <p className="subtitle">
-          My first website with <strong>Bulma</strong>!
-        </p>
+      <div className="columns is-multiline">
+        {
+          GAMES.map(game => (
+            <div className="column is-4">
+              <GameCard game={ game } />
+            </div>
+          ))
+        }
       </div>
     </section>
   </Layout>
 );
 
 export default HomePage;
-
-const __Text = styled.span`
-  color: ${ p => p.theme.colour.brand };
-`;
