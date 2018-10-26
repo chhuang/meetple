@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 const GameCard = props => (
   <__GameCard href="#">
-    <__Figure cover={ `/static/images/games/${ props.game.cover }` } logoPosition={ props.game.logoPosition }>
-      <img src={ `/static/images/games/${ props.game.cover }` } />
+    <__Figure cover={ props.hit.image }>
+      <img src={ props.hit.image } />
     </__Figure>
 
     <__Bottom>
-      <h3>{ props.game.name }</h3>
+      <h3>{ props.hit.name }</h3>
     </__Bottom>
   </__GameCard>
 );
@@ -37,7 +37,7 @@ const __Figure = styled.figure`
   background-color: ${ p => p.theme.colour.brown };
   background-image: url(${ p => p.cover });
   background-size: cover;
-  background-position: ${ p => p.logoPosition ? p.logoPosition : 'center top' };
+  background-position: center top;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
