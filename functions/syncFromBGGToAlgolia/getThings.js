@@ -20,66 +20,50 @@ const getThings = (id, expandFamily) => {
       if (!Array.isArray(res.items.item)) {
         return Promise.reject({ message: 'Thing not found.' });
       } else {
-        const things = res.items.item.map(thing => ({
-          id: thing.$.id || '',
-          type: thing.$.type || '',
-          thumbnail: thing.thumbnail ? thing.thumbnail[0] : '',
-          image: thing.image ? thing.image[0] : '',
-          name: thing.name ? thing.name[0].$.value : '',
-          description: thing.description ? thing.description[0] : '',
-          yearpublished: thing.yearpublished ? thing.yearpublished[0].$.value : '',
-          minplayers: thing.minplayers ? thing.minplayers[0].$.value : '',
-          maxplayers: thing.maxplayers ? thing.maxplayers[0].$.value : '',
-          playingtime: thing.playingtime ? thing.playingtime[0].$.value : '',
-          minplaytime: thing.minplaytime ? thing.minplaytime[0].$.value : '',
-          maxplaytime: thing.maxplaytime ? thing.maxplaytime[0].$.value : '',
-          minage: thing.minage ? thing.minage[0].$.value : '',
-          poll: Array.isArray(thing.poll) ? thing.poll.map(item => ({
-            name: item.$.name,
-            title: item.$.title,
-            totalvotes: item.$.totalvotes,
-            results: Array.isArray(item.results) ? item.results.map(result => ({
-              numplayers: (result.$ && result.$.numplayers) ? result.$.numplayers : undefined,
-              result: Array.isArray(result.result) ? result.result.map(resultItem => ({
-                value: resultItem.$.value,
-                numvotes: resultItem.$.numvotes
-              })) : []
-            })) : []
-          })) : undefined,
-          link: Array.isArray(thing.link) ? thing.link.map(item => ({
-            type: item.$.type,
-            id: item.$.id,
-            value: item.$.value
-          })) : undefined,
-          statistics: Array.isArray(thing.statistics) ? {
-            usersrated: thing.statistics[0].ratings[0].usersrated[0].$.value,
-            average: thing.statistics[0].ratings[0].average[0].$.value,
-            bayesaverage: thing.statistics[0].ratings[0].bayesaverage[0].$.value,
-            ranks: thing.statistics[0].ratings[0].ranks[0].rank.map(rankItem => ({
-              type: rankItem.$.type,
-              id: rankItem.$.id,
-              name: rankItem.$.name,
-              friendlyname: rankItem.$.friendlyname,
-              value: rankItem.$.value,
-              bayesaverage: rankItem.$.bayesaverage
-            })),
-            stddev: thing.statistics[0].ratings[0].stddev[0].$.value,
-            median: thing.statistics[0].ratings[0].median[0].$.value,
-            owned: thing.statistics[0].ratings[0].owned[0].$.value,
-            trading: thing.statistics[0].ratings[0].trading[0].$.value,
-            wanting: thing.statistics[0].ratings[0].wanting[0].$.value,
-            wishing: thing.statistics[0].ratings[0].wishing[0].$.value,
-            numcomments: thing.statistics[0].ratings[0].numcomments[0].$.value,
-            numweights: thing.statistics[0].ratings[0].numweights[0].$.value,
-            averageweight: thing.statistics[0].ratings[0].averageweight[0].$.value
-          } : undefined
-        }));
+        const things = res.items.item.map(thing => {
+
+          const bggLinks = Array.isArray(thing.link) ? thing.link.map(linkItem => linkItem.$) : [];
+
+          return ({
+            id: thing.$.id || '',
+            type: thing.$.type || '',
+            name: thing.name ? thing.name[0].$.value : '',
+            description: thing.description ? thing.description[0] : '',
+            
+            image: thing.image ? thing.image[0] : '',
+            thumbnail: thing.thumbnail ? thing.thumbnail[0] : '',
+  
+            designers: bggLinks.filter(link => link.type === 'boardgamedesigner'),
+            artists: bggLinks.filter(link => link.type === 'boardgameartist'),
+            publishers: bggLinks.filter(link => link.type === 'boardgamepublisher'),
+            categories: bggLinks.filter(link => link.type === 'boardgamecategory'),
+            mechanics: bggLinks.filter(link => link.type === 'boardgamemechanic'),
+            families: bggLinks.filter(link => link.type === 'boardgamefamily'),
+            
+            specs: {
+              yearPublished: thing.yearpublished ? parseFloat(thing.yearpublished[0].$.value) : null,
+              minPlayers: thing.minplayers ? parseFloat(thing.minplayers[0].$.value) : null,
+              maxPlayers: thing.maxplayers ? parseFloat(thing.maxplayers[0].$.value) : null,
+              playingTime: thing.playingtime ? parseFloat(thing.playingtime[0].$.value) : null,
+              minPlayTime: thing.minplaytime ? parseFloat(thing.minplaytime[0].$.value) : null,
+              maxPlayTime: thing.maxplaytime ? parseFloat(thing.maxplaytime[0].$.value) : null,
+              minAge: thing.minage ? parseFloat(thing.minage[0].$.value) : null,
+            },
+  
+            stats: Array.isArray(thing.statistics) ? {
+              weight: parseFloat(thing.statistics[0].ratings[0].averageweight[0].$.value),
+              rating: parseFloat(thing.statistics[0].ratings[0].average[0].$.value),
+              usersRated: parseFloat(thing.statistics[0].ratings[0].usersrated[0].$.value),
+              ranks: thing.statistics[0].ratings[0].ranks[0].rank.map(rankItem => rankItem.$)
+            } : undefined
+          });
+        });
 
         const output = { things };
 
         if (expandFamily) {
-          const families = things[0].link && things[0].link.filter(linkItem => linkItem.type === 'boardgamefamily');
-          output.familyIds = families ? families.map(family => family.id) : [];
+          // const families = things[0].link && things[0].link.filter(linkItem => linkItem.type === 'boardgamefamily');
+          // output.familyIds = families ? families.map(family => family.id) : [];
         }
 
         return Promise.resolve(output);
@@ -89,7 +73,7 @@ const getThings = (id, expandFamily) => {
 };
 
 // dev test
-// getThings('174430', true)
+// getThings('174430')
 // .then(res => console.log(JSON.stringify(res, null, 2)));
 
 module.exports = getThings;
