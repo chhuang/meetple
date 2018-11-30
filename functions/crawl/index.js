@@ -12,18 +12,7 @@ const CATEGORIES = [
   // 'cgs'
 ];
 
-const PAGES = [
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  10
-];
+const PAGES = Array(50).fill().map((x, i) => i + 1);
 
 const getIds = (category, page) => {
   return axios
