@@ -1,0 +1,22 @@
+{
+  "name": "meetple-get-game-ids",
+  "version": "1.0.0",
+  "main": "getGameIds.js",
+  "scripts": {
+    "test": "jest",
+    "deploy": "gcloud functions deploy meetple-get-game-ids --runtime=nodejs10 --trigger-http --entry-point=getGameIds"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "engines": {
+    "node": "12.6.0",
+    "yarn": "1.16.0"
+  }
+}
