@@ -1,12 +1,12 @@
 /**
  * LAYOUT
  */
-import Layout from '~/layouts/app';
+import Layout from '@root/layouts/app';
 
 /**
  * COMPONENTS
  */
-import GameSearch from '~/components/GameSearch';
+import GameSearch from '@components/GameSearch';
 
 const HomePage = () => (
   <Layout>

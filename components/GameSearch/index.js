@@ -1,7 +1,12 @@
-import { InstantSearch, SearchBox, RefinementList, Hits } from 'react-instantsearch-dom';
-import GameCard from '~/components/GameCard';
+import {
+  InstantSearch,
+  SearchBox,
+  RefinementList,
+  Hits
+} from 'react-instantsearch-dom';
+import GameCard from '@components/GameCard';
 
-export default () => (
+const Search = () => (
   <InstantSearch
     indexName="things"
     appId="R7R9RSL45J"
@@ -13,8 +18,8 @@ export default () => (
     <RefinementList attribute="specs.minPlayTime" />
     <RefinementList attribute="specs.maxPlayTime" />
     <SearchBox />
-    <Hits
-      hitComponent={ GameCard }
-    />
+    <Hits hitComponent={GameCard} />
   </InstantSearch>
 );
+
+export default Search;

@@ -1,16 +1,24 @@
 {
-  "presets": [
-    "next/babel"
-  ],
+  "presets": ["next/babel"],
   "plugins": [
-    "styled-components",
     [
-      "module-resolver", {
-        "root": ["./"],
+      "styled-components",
+      {
+        "ssr": true,
+        "fileName": false,
+        "displayName": true
+      }
+    ],
+    ["inline-react-svg"],
+    [
+      "module-resolver",
+      {
         "alias": {
-          "~": "./"
+          "@root": "./",
+          "@components": "./components"
         }
       }
-    ]
+    ],
+    ["inline-dotenv"]
   ]
 }

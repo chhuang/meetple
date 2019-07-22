@@ -1,36 +1,42 @@
 module.exports = {
-  "parser": "babel-eslint",
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true,
-    "jest": true
+  parser: 'babel-eslint',
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+    jest: true
   },
-  "plugins": [
-    "react"
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:import/errors',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended'
   ],
-  "extends": "eslint:recommended",
-  "parserOptions": {
-    "sourceType": "module"
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module'
   },
-  "rules": {
-    "no-console": 0,
-    "indent": "off",
-    "indent-legacy": [2, 2, {
-      "SwitchCase": 1
-    }],
-    "linebreak-style": [2, "unix"],
-    "quotes": [2, "single"],
-    "semi": [2, "always"],
-    "object-curly-spacing": [2, "always"],
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
-    "react/jsx-curly-spacing": [2, {
-      "when": "always",
-      "children": true,
-      "spacing": {
-        "objectLiterals": "never"
+  plugins: ['react'],
+  rules: {
+    'react/react-in-jsx-scope': 'off', // React is set as global variable by Next.js
+    'react/prop-types': 'off',
+    'no-console': 'off'
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    },
+    'import/resolver': {
+      'babel-module': {
+        root: ['./'],
+        alias: {
+          '@components': './components'
+        }
       }
-    }]
+    }
   }
 };
