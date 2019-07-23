@@ -1,0 +1,21 @@
+{
+  "name": "meetple-fetch-game-by-id",
+  "version": "1.0.0",
+  "main": "fetchGameById.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "lodash": "^4.17.15",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "engines": {
+    "node": "12.6.0",
+    "yarn": "1.16.0"
+  }
+}

@@ -19,6 +19,7 @@ module.exports.getGameIds = async (req, res) => {
 
   const idSets = await Promise.all(promises);
 
+  // TODO publish pub/sub message to trigger fetchGameById function
   res.json({
     ids: flatten(idSets)
   });

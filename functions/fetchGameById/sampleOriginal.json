@@ -1,0 +1,739 @@
+{
+  "$": {
+    "type": "boardgame",
+    "id": "220308"
+  },
+  "thumbnail": [
+    "https://cf.geekdo-images.com/thumb/img/5P9XdMqgHu8f56SlenLalqSK_GU=/fit-in/200x150/pic3763556.jpg"
+  ],
+  "image": [
+    "https://cf.geekdo-images.com/original/img/FpQ2ODFHSgDGfEpskL0Uu2xyYMA=/0x0/pic3763556.jpg"
+  ],
+  "name": [
+    {
+      "$": {
+        "type": "primary",
+        "sortindex": "1",
+        "value": "Gaia Project"
+      }
+    },
+    {
+      "$": {
+        "type": "alternate",
+        "sortindex": "1",
+        "value": "Gaia projekt"
+      }
+    },
+    {
+      "$": {
+        "type": "alternate",
+        "sortindex": "1",
+        "value": "Progetto Gaia"
+      }
+    },
+    {
+      "$": {
+        "type": "alternate",
+        "sortindex": "1",
+        "value": "Projekt Gaja"
+      }
+    },
+    {
+      "$": {
+        "type": "alternate",
+        "sortindex": "1",
+        "value": "Projet Gaia"
+      }
+    },
+    {
+      "$": {
+        "type": "alternate",
+        "sortindex": "1",
+        "value": "Projeto Gaia"
+      }
+    },
+    {
+      "$": {
+        "type": "alternate",
+        "sortindex": "1",
+        "value": "Terra Mystica: Projeto Gaia"
+      }
+    },
+    {
+      "$": {
+        "type": "alternate",
+        "sortindex": "1",
+        "value": "Проект \"Гайя\""
+      }
+    },
+    {
+      "$": {
+        "type": "alternate",
+        "sortindex": "1",
+        "value": "テラミスティカ：ガイアプロジェクト"
+      }
+    },
+    {
+      "$": {
+        "type": "alternate",
+        "sortindex": "1",
+        "value": "盖亚计划"
+      }
+    },
+    {
+      "$": {
+        "type": "alternate",
+        "sortindex": "1",
+        "value": "가이아 프로젝트"
+      }
+    }
+  ],
+  "description": [
+    "Gaia Project is a new game in the line of Terra Mystica. As in the original Terra Mystica, fourteen different factions live on seven different kinds of planets, and each faction is bound to their own home planets, so to develop and grow, they must terraform neighboring planets into their home environments in competition with the other groups. In addition, Gaia planets can be used by all factions for colonization, and Transdimensional planets can be changed into Gaia planets.&#10;&#10;All factions can improve their skills in six different areas of development &mdash; Terraforming, Navigation, Artificial Intelligence, Gaiaforming, Economy, Research &mdash; leading to advanced technology and special bonuses. To do all of that, each group has special skills and abilities.&#10;&#10;The playing area is made of ten sectors, allowing a variable set-up and thus an even bigger replay value than its predecessor Terra Mystica. A two-player game is hosted on seven sectors.&#10;&#10;&mdash;description from the publisher&#10;&#10;"
+  ],
+  "yearpublished": [
+    {
+      "$": {
+        "value": "2017"
+      }
+    }
+  ],
+  "minplayers": [
+    {
+      "$": {
+        "value": "1"
+      }
+    }
+  ],
+  "maxplayers": [
+    {
+      "$": {
+        "value": "4"
+      }
+    }
+  ],
+  "poll": [
+    {
+      "$": {
+        "name": "suggested_numplayers",
+        "title": "User Suggested Number of Players",
+        "totalvotes": "275"
+      },
+      "results": [
+        {
+          "$": {
+            "numplayers": "1"
+          },
+          "result": [
+            {
+              "$": {
+                "value": "Best",
+                "numvotes": "16"
+              }
+            },
+            {
+              "$": {
+                "value": "Recommended",
+                "numvotes": "113"
+              }
+            },
+            {
+              "$": {
+                "value": "Not Recommended",
+                "numvotes": "36"
+              }
+            }
+          ]
+        },
+        {
+          "$": {
+            "numplayers": "2"
+          },
+          "result": [
+            {
+              "$": {
+                "value": "Best",
+                "numvotes": "48"
+              }
+            },
+            {
+              "$": {
+                "value": "Recommended",
+                "numvotes": "165"
+              }
+            },
+            {
+              "$": {
+                "value": "Not Recommended",
+                "numvotes": "16"
+              }
+            }
+          ]
+        },
+        {
+          "$": {
+            "numplayers": "3"
+          },
+          "result": [
+            {
+              "$": {
+                "value": "Best",
+                "numvotes": "135"
+              }
+            },
+            {
+              "$": {
+                "value": "Recommended",
+                "numvotes": "82"
+              }
+            },
+            {
+              "$": {
+                "value": "Not Recommended",
+                "numvotes": "3"
+              }
+            }
+          ]
+        },
+        {
+          "$": {
+            "numplayers": "4"
+          },
+          "result": [
+            {
+              "$": {
+                "value": "Best",
+                "numvotes": "124"
+              }
+            },
+            {
+              "$": {
+                "value": "Recommended",
+                "numvotes": "74"
+              }
+            },
+            {
+              "$": {
+                "value": "Not Recommended",
+                "numvotes": "14"
+              }
+            }
+          ]
+        },
+        {
+          "$": {
+            "numplayers": "4+"
+          },
+          "result": [
+            {
+              "$": {
+                "value": "Best",
+                "numvotes": "1"
+              }
+            },
+            {
+              "$": {
+                "value": "Recommended",
+                "numvotes": "3"
+              }
+            },
+            {
+              "$": {
+                "value": "Not Recommended",
+                "numvotes": "91"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$": {
+        "name": "suggested_playerage",
+        "title": "User Suggested Player Age",
+        "totalvotes": "63"
+      },
+      "results": [
+        {
+          "result": [
+            {
+              "$": {
+                "value": "2",
+                "numvotes": "1"
+              }
+            },
+            {
+              "$": {
+                "value": "3",
+                "numvotes": "0"
+              }
+            },
+            {
+              "$": {
+                "value": "4",
+                "numvotes": "0"
+              }
+            },
+            {
+              "$": {
+                "value": "5",
+                "numvotes": "0"
+              }
+            },
+            {
+              "$": {
+                "value": "6",
+                "numvotes": "0"
+              }
+            },
+            {
+              "$": {
+                "value": "8",
+                "numvotes": "1"
+              }
+            },
+            {
+              "$": {
+                "value": "10",
+                "numvotes": "3"
+              }
+            },
+            {
+              "$": {
+                "value": "12",
+                "numvotes": "10"
+              }
+            },
+            {
+              "$": {
+                "value": "14",
+                "numvotes": "41"
+              }
+            },
+            {
+              "$": {
+                "value": "16",
+                "numvotes": "6"
+              }
+            },
+            {
+              "$": {
+                "value": "18",
+                "numvotes": "1"
+              }
+            },
+            {
+              "$": {
+                "value": "21 and up",
+                "numvotes": "0"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$": {
+        "name": "language_dependence",
+        "title": "Language Dependence",
+        "totalvotes": "23"
+      },
+      "results": [
+        {
+          "result": [
+            {
+              "$": {
+                "level": "1036",
+                "value": "No necessary in-game text",
+                "numvotes": "20"
+              }
+            },
+            {
+              "$": {
+                "level": "1037",
+                "value": "Some necessary text - easily memorized or small crib sheet",
+                "numvotes": "3"
+              }
+            },
+            {
+              "$": {
+                "level": "1038",
+                "value": "Moderate in-game text - needs crib sheet or paste ups",
+                "numvotes": "0"
+              }
+            },
+            {
+              "$": {
+                "level": "1039",
+                "value": "Extensive use of text - massive conversion needed to be playable",
+                "numvotes": "0"
+              }
+            },
+            {
+              "$": {
+                "level": "1040",
+                "value": "Unplayable in another language",
+                "numvotes": "0"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "playingtime": [
+    {
+      "$": {
+        "value": "150"
+      }
+    }
+  ],
+  "minplaytime": [
+    {
+      "$": {
+        "value": "60"
+      }
+    }
+  ],
+  "maxplaytime": [
+    {
+      "$": {
+        "value": "150"
+      }
+    }
+  ],
+  "minage": [
+    {
+      "$": {
+        "value": "12"
+      }
+    }
+  ],
+  "link": [
+    {
+      "$": {
+        "type": "boardgamecategory",
+        "id": "1015",
+        "value": "Civilization"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamecategory",
+        "id": "1021",
+        "value": "Economic"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamecategory",
+        "id": "1016",
+        "value": "Science Fiction"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamecategory",
+        "id": "1113",
+        "value": "Space Exploration"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamecategory",
+        "id": "1086",
+        "value": "Territory Building"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamemechanic",
+        "id": "2080",
+        "value": "Area Control / Area Influence"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamemechanic",
+        "id": "2011",
+        "value": "Modular Board"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamemechanic",
+        "id": "2081",
+        "value": "Route/Network Building"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamemechanic",
+        "id": "2015",
+        "value": "Variable Player Powers"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamefamily",
+        "id": "5666",
+        "value": "Solitaire Games"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamefamily",
+        "id": "27646",
+        "value": "Tableau Building"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamefamily",
+        "id": "26098",
+        "value": "Terra Mystica"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgameimplementation",
+        "id": "120677",
+        "value": "Terra Mystica",
+        "inbound": "true"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamedesigner",
+        "id": "4300",
+        "value": "Jens Drögemüller"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamedesigner",
+        "id": "4407",
+        "value": "Helge Ostertag"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgameartist",
+        "id": "12484",
+        "value": "Dennis Lohausen"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "22380",
+        "value": "Feuerland Spiele"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "10768",
+        "value": "Cranio Creations"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "23205",
+        "value": "DiceTree Games"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "2973",
+        "value": "Edge Entertainment"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "12540",
+        "value": "Game Harbor"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "35960",
+        "value": "Games Factory"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "18852",
+        "value": "Hobby World"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "30677",
+        "value": "Maldito Games"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "35035",
+        "value": "Mandala Jogos"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "36563",
+        "value": "Reflexshop"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "22609",
+        "value": "テンデイズゲームズ (Ten Days Games)"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "4932",
+        "value": "White Goblin Games"
+      }
+    },
+    {
+      "$": {
+        "type": "boardgamepublisher",
+        "id": "538",
+        "value": "Z-Man Games, Inc."
+      }
+    }
+  ],
+  "statistics": [
+    {
+      "$": {
+        "page": "1"
+      },
+      "ratings": [
+        {
+          "usersrated": [
+            {
+              "$": {
+                "value": "9962"
+              }
+            }
+          ],
+          "average": [
+            {
+              "$": {
+                "value": "8.53596"
+              }
+            }
+          ],
+          "bayesaverage": [
+            {
+              "$": {
+                "value": "8.12952"
+              }
+            }
+          ],
+          "ranks": [
+            {
+              "rank": [
+                {
+                  "$": {
+                    "type": "subtype",
+                    "id": "1",
+                    "name": "boardgame",
+                    "friendlyname": "Board Game Rank",
+                    "value": "7",
+                    "bayesaverage": "8.12952"
+                  }
+                },
+                {
+                  "$": {
+                    "type": "family",
+                    "id": "5497",
+                    "name": "strategygames",
+                    "friendlyname": "Strategy Game Rank",
+                    "value": "5",
+                    "bayesaverage": "8.21705"
+                  }
+                }
+              ]
+            }
+          ],
+          "stddev": [
+            {
+              "$": {
+                "value": "1.42057"
+              }
+            }
+          ],
+          "median": [
+            {
+              "$": {
+                "value": "0"
+              }
+            }
+          ],
+          "owned": [
+            {
+              "$": {
+                "value": "12163"
+              }
+            }
+          ],
+          "trading": [
+            {
+              "$": {
+                "value": "53"
+              }
+            }
+          ],
+          "wanting": [
+            {
+              "$": {
+                "value": "1281"
+              }
+            }
+          ],
+          "wishing": [
+            {
+              "$": {
+                "value": "6413"
+              }
+            }
+          ],
+          "numcomments": [
+            {
+              "$": {
+                "value": "1475"
+              }
+            }
+          ],
+          "numweights": [
+            {
+              "$": {
+                "value": "657"
+              }
+            }
+          ],
+          "averageweight": [
+            {
+              "$": {
+                "value": "4.2831"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
