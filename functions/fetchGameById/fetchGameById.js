@@ -37,7 +37,6 @@ module.exports = async args => {
    */
   const meta = { fetchedAt: new Date() };
 
-  // TODO upsert to db
   return {
     id: id.toString(),
     isHot,
