@@ -67,6 +67,21 @@ module.exports = original => {
     }
   });
 
+  const originalRanks =
+    get(original, 'statistics[0].ratings[0].ranks[0].rank') || [];
+
+  const ranks = originalRanks.map(rank => ({
+    name: get(rank, '$.name'),
+    friendlyName: get(rank, '$.friendlyname'),
+    value: get(rank, '$.value'),
+    averageRating: get(rank, '$.bayesaverage')
+  }));
+
+  const weight = {
+    average: get(original, 'statistics[0].ratings[0].averageweight[0].$.value'),
+    count: get(original, 'statistics[0].ratings[0].numweights[0].$.value')
+  };
+
   return {
     name,
     description,
@@ -78,6 +93,8 @@ module.exports = original => {
     implementations,
     designers,
     artists,
-    publishers
+    publishers,
+    ranks,
+    weight
   };
 };

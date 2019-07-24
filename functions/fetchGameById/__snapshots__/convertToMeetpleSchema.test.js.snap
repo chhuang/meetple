@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test function: convertToMeetpleSchema Sample data 1`] = `
+Object {
+  "artists": Array [
+    "Dennis Lohausen",
+  ],
+  "assets": Object {
+    "image": "https://cf.geekdo-images.com/original/img/FpQ2ODFHSgDGfEpskL0Uu2xyYMA=/0x0/pic3763556.jpg",
+    "thumbnail": "https://cf.geekdo-images.com/thumb/img/5P9XdMqgHu8f56SlenLalqSK_GU=/fit-in/200x150/pic3763556.jpg",
+  },
+  "categories": Array [
+    "Civilization",
+    "Economic",
+    "Science Fiction",
+    "Space Exploration",
+    "Territory Building",
+  ],
+  "description": "Gaia Project is a new game in the line of Terra Mystica. As in the original Terra Mystica, fourteen different factions live on seven different kinds of planets, and each faction is bound to their own home planets, so to develop and grow, they must terraform neighboring planets into their home environments in competition with the other groups. In addition, Gaia planets can be used by all factions for colonization, and Transdimensional planets can be changed into Gaia planets.&#10;&#10;All factions can improve their skills in six different areas of development &mdash; Terraforming, Navigation, Artificial Intelligence, Gaiaforming, Economy, Research &mdash; leading to advanced technology and special bonuses. To do all of that, each group has special skills and abilities.&#10;&#10;The playing area is made of ten sectors, allowing a variable set-up and thus an even bigger replay value than its predecessor Terra Mystica. A two-player game is hosted on seven sectors.&#10;&#10;&mdash;description from the publisher&#10;&#10;",
+  "designers": Array [
+    "Jens Drögemüller",
+    "Helge Ostertag",
+  ],
+  "families": Array [
+    "Solitaire Games",
+    "Tableau Building",
+    "Terra Mystica",
+  ],
+  "implementations": Array [
+    "Terra Mystica",
+  ],
+  "info": Object {
+    "maxPlayTime": "150",
+    "maxPlayers": "4",
+    "minAge": "12",
+    "minPlayTime": "60",
+    "minPlayers": "1",
+    "playingTime": "150",
+    "yearPublished": "2017",
+  },
+  "mechanics": Array [
+    "Area Control / Area Influence",
+    "Modular Board",
+    "Route/Network Building",
+    "Variable Player Powers",
+  ],
+  "name": "Gaia Project",
+  "publishers": Array [
+    "Feuerland Spiele",
+    "Cranio Creations",
+    "DiceTree Games",
+    "Edge Entertainment",
+    "Game Harbor",
+    "Games Factory",
+    "Hobby World",
+    "Maldito Games",
+    "Mandala Jogos",
+    "Reflexshop",
+    "テンデイズゲームズ (Ten Days Games)",
+    "White Goblin Games",
+    "Z-Man Games, Inc.",
+  ],
+  "ranks": Array [
+    Object {
+      "averageRating": "8.12952",
+      "friendlyName": "Board Game Rank",
+      "name": "boardgame",
+      "value": "7",
+    },
+    Object {
+      "averageRating": "8.21705",
+      "friendlyName": "Strategy Game Rank",
+      "name": "strategygames",
+      "value": "5",
+    },
+  ],
+  "weight": Object {
+    "average": "4.2831",
+    "count": "657",
+  },
+}
+`;
