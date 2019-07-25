@@ -4,7 +4,7 @@ const createPagesArray = require('./createPagesArray');
 const getUrl = require('./getUrl');
 const getGameIdsFromOnePage = require('./getGameIdsFromOnePage');
 
-module.exports.getGameIds = async (req, res) => {
+module.exports.scrapeGameIds = async (req, res) => {
   const { category, from, to, testMode } = req.body;
 
   const pages = createPagesArray({ from, to });
