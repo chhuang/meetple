@@ -1,9 +1,9 @@
-const { getGameIds } = require('./getGameIds');
+const { scrapeGameIds } = require('./scrapeGameIds');
 
-describe('Test function: getGameIds', () => {
+describe('Test function: scrapeGameIds', () => {
   test('Empty req body', async () => {
     let result;
-    await getGameIds(
+    await scrapeGameIds(
       { body: { testMode: true } },
       {
         json: res => {
@@ -16,7 +16,7 @@ describe('Test function: getGameIds', () => {
 
   test('no category, page 1', async () => {
     let result;
-    await getGameIds(
+    await scrapeGameIds(
       { body: { testMode: true, from: 1, to: 1 } },
       {
         json: res => {
@@ -29,7 +29,7 @@ describe('Test function: getGameIds', () => {
 
   test('strategygames, page 2,3', async () => {
     let result;
-    await getGameIds(
+    await scrapeGameIds(
       { body: { testMode: true, category: 'strategygames', from: 2, to: 3 } },
       {
         json: res => {

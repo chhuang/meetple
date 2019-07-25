@@ -1,10 +1,10 @@
 {
-  "name": "meetple-get-game-ids",
+  "name": "meetple-scrape-game-ids",
   "version": "1.0.0",
-  "main": "getGameIds.js",
+  "main": "scrapeGameIds.js",
   "scripts": {
     "test": "jest",
-    "deploy": "gcloud functions deploy meetple-get-game-ids --runtime=nodejs10 --trigger-http --entry-point=getGameIds"
+    "deploy": "gcloud functions deploy meetple-scrape-game-ids --runtime=nodejs10 --trigger-http --entry-point=scrapeGameIds"
   },
   "license": "ISC",
   "dependencies": {
