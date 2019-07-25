@@ -4,8 +4,8 @@ const gameSchema = require('./game');
 const connectMongoDB = require('./dataSource/MongoDB');
 const MONGO_URI = process.env.MONGO_URI;
 
-const createServer = async ({ mongoUri }) => {
-  return await new ApolloServer({
+(async () => {
+  const server = new ApolloServer({
     schema: mergeSchemas({
       schemas: [gameSchema]
     }),
@@ -14,10 +14,8 @@ const createServer = async ({ mongoUri }) => {
       return { db };
     }
   });
-};
 
-(async () => {
-  const server = await createServer({ mongoUri: MONGO_URI });
   const serverInfo = await server.listen();
+
   console.log(`GraphQL Server started at ${serverInfo.url}`);
 })();
