@@ -16,8 +16,6 @@ const createServer = async ({ mongoUri }) => {
   });
 };
 
-module.exports = { createServer };
-
 (async () => {
   const server = await createServer({ mongoUri: MONGO_URI });
   const serverInfo = await server.listen();
