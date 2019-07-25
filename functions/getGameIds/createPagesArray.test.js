@@ -5,11 +5,15 @@ describe('Test function: createPagesArray', () => {
     expect(createPagesArray()).toStrictEqual([1]);
   });
 
-  test('maxPage = 10', () => {
-    expect(createPagesArray(10)).toStrictEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  test('not a number', () => {
+    expect(createPagesArray({ from: [], to: {} })).toStrictEqual([1]);
   });
 
-  test('maxPage is a string', () => {
-    expect(createPagesArray('string')).toStrictEqual([1]);
+  test('from 2 to 5', () => {
+    expect(createPagesArray({ from: 2, to: 5 })).toStrictEqual([2, 3, 4, 5]);
+  });
+
+  test('from 5 to 2', () => {
+    expect(createPagesArray({ from: 5, to: 2 })).toStrictEqual([5]);
   });
 });

@@ -4,7 +4,7 @@ describe('Test function: getGameIds', () => {
   test('Empty req body', async () => {
     let result;
     await getGameIds(
-      { body: {} },
+      { body: { testMode: true } },
       {
         json: res => {
           result = res.ids;
@@ -14,10 +14,10 @@ describe('Test function: getGameIds', () => {
     expect(result).toHaveLength(100);
   });
 
-  test('no category, 1 pages', async () => {
+  test('no category, page 1', async () => {
     let result;
     await getGameIds(
-      { body: { maxPage: 1 } },
+      { body: { testMode: true, from: 1, to: 1 } },
       {
         json: res => {
           result = res.ids;
@@ -27,10 +27,10 @@ describe('Test function: getGameIds', () => {
     expect(result).toHaveLength(100);
   });
 
-  test('strategygames, 2 pages', async () => {
+  test('strategygames, page 2,3', async () => {
     let result;
     await getGameIds(
-      { body: { category: 'strategygames', maxPage: 2 } },
+      { body: { testMode: true, category: 'strategygames', from: 2, to: 3 } },
       {
         json: res => {
           result = res.ids;
