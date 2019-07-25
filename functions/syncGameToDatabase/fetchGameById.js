@@ -41,7 +41,6 @@ module.exports = async args => {
     id: id.toString(),
     isHot,
     ...meetpleSchema,
-    meta,
-    original
+    meta
   };
 };

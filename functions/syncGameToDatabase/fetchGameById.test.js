@@ -27,13 +27,7 @@ describe('Test function: fetchGameById', () => {
     expect(result.id).toStrictEqual('220308');
     expect(typeof result.isHot).toStrictEqual('boolean');
     expect(result.isHot).toStrictEqual(false);
-    expect(typeof result.original).toStrictEqual('object');
     expect(typeof result.meta).toStrictEqual('object');
     expect(typeof result.meta.fetchedAt).toStrictEqual('object');
-
-    const primaryName = result.original.name.find(
-      name => name.$.type === 'primary'
-    );
-    expect(primaryName.$.value).toStrictEqual('Gaia Project');
   });
 });

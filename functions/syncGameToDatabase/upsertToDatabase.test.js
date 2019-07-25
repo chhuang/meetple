@@ -1,6 +1,7 @@
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const { MongoClient } = require('mongodb');
 const upsertToDatabase = require('./upsertToDatabase');
+const sampleConverted = require('./sampleConverted.json');
 
 const mongod = new MongoMemoryServer();
 let client;
@@ -15,7 +16,7 @@ afterAll(async () => {
   await mongod.stop();
 });
 
-test('a', async () => {
+test('Upsert logic', async () => {
   const db = client.db();
 
   const sample = { id: 'A', foo: 'bar' };
@@ -25,4 +26,11 @@ test('a', async () => {
 
   const resultB = await upsertToDatabase(db, sample);
   expect(resultB).toBe('updated');
+});
+
+test('Insert sample', async () => {
+  const db = client.db();
+
+  const result = await upsertToDatabase(db, sampleConverted);
+  expect(result).toBe('inserted');
 });

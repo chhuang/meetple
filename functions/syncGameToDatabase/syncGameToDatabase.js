@@ -14,7 +14,7 @@ const syncGameToDatabase = async data => {
 
     const db = client.db();
 
-    const game = fetchGameById(id);
+    const game = await fetchGameById({ id });
 
     await upsertToDatabase(db, game);
     console.log(`${game.id} synced`);
@@ -22,6 +22,8 @@ const syncGameToDatabase = async data => {
     await client.close();
   } catch (err) {
     console.error(err);
+  } finally {
+    return Promise.resolve();
   }
 };
 
