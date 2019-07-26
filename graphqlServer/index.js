@@ -9,10 +9,12 @@ const MONGO_URI = process.env.MONGO_URI;
     schema: mergeSchemas({
       schemas: [gameSchema]
     }),
-    context: async () => {
+    context: async ({ req }) => {
       const db = await connectMongoDB(MONGO_URI);
-      return { db };
-    }
+      const auth = req.headers.authorization;
+      return { db, auth };
+    },
+    debug: process.env.NODE_ENV !== 'production'
   });
 
   const serverInfo = await server.listen();
