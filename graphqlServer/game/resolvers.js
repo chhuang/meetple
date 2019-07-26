@@ -1,13 +1,16 @@
 const sortBy = require('lodash/sortBy');
+const { UserInputError } = require('apollo-server');
 
 module.exports = {
   Query: {
     game: async (obj, { id }, { db }) => {
-      const game = await db.collection('games').findOne({ id });
-      return game;
+      return await db.collection('games').findOne({ id });
     },
 
     games: async (obj, { category, name, limit }, { db }) => {
+      if (!category && !name) {
+        throw new UserInputError('Need either category or name.');
+      }
       if (category) {
         const games = await db
           .collection('games')
