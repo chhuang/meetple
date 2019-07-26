@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "jest --detectOpenHandles --forceExit",
-    "deploy:heroku": "git subtree push --prefix graphqlServer heroku master"
+    "deploy:heroku": "cd .. && git subtree push --prefix graphqlServer heroku master"
   },
   "dependencies": {
     "apollo-server": "^2.7.0",
