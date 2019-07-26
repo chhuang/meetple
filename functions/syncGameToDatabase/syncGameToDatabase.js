@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { MongoClient } = require("mongodb");
 const fetchGameById = require("./fetchGameById");
 const upsertToDatabase = require("./upsertToDatabase");

@@ -5,7 +5,9 @@ const getUrl = require("./getUrl");
 const getGameIdsFromOnePage = require("./getGameIdsFromOnePage");
 
 module.exports.scrapeGameIds = async (req, res) => {
-  const { category, from, to, testMode } = req.body;
+  const { category, from, to, testMode } = req.query || req.body;
+
+  console.log(`Start scraping ${category} page ${from} to ${to}`);
 
   const pages = createPagesArray({ from, to });
 

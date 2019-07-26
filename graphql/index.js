@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { ApolloServer } = require("apollo-server");
 const { mergeSchemas } = require("graphql-tools");
 const get = require("lodash/get");
