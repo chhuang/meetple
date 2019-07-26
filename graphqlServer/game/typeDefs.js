@@ -61,7 +61,7 @@ module.exports = gql`
   }
 
   type Meta {
-    fetchAt: Date!
+    fetchedAt: Date!
   }
 
   type Query {
