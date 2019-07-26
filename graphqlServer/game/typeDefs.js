@@ -3,8 +3,20 @@ const { gql } = require('apollo-server');
 module.exports = gql`
   scalar Date
 
+  enum Category {
+    boardgame
+    strategygames
+    partygames
+    familygames
+    abstracts
+    wargames
+    childrensgames
+    thematic
+    cgs
+  }
+
   type Game {
-    id: String!
+    id: ID!
     name: String!
     description: String
     assets: Assets
@@ -16,7 +28,7 @@ module.exports = gql`
     designers: [String]!
     artists: [String]!
     publishers: [String]!
-    ranks: [Rank]!
+    ranks(category: Category): [Rank]!
     weight: Weight
     meta: Meta
   }
@@ -54,5 +66,6 @@ module.exports = gql`
 
   type Query {
     game(id: String!): Game
+    games(category: Category, name: String, limit: Int = 10): [Game]
   }
 `;

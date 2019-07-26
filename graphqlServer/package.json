@@ -9,6 +9,7 @@
     "apollo-server": "^2.7.0",
     "graphql": "^14.4.2",
     "graphql-tools": "^4.0.5",
+    "lodash": "^4.17.15",
     "mongodb": "^3.2.7"
   },
   "devDependencies": {
