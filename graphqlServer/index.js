@@ -24,7 +24,7 @@ module.exports = { createServer };
 (async () => {
   const server = createServer(MONGO_URI);
 
-  const serverInfo = await server.listen();
+  const serverInfo = await server.listen({ port: process.env.PORT || 4000 });
 
   console.log(`GraphQL Server started at ${serverInfo.url}`);
 })();
