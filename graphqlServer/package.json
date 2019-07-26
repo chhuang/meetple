@@ -1,0 +1,21 @@
+{
+  "name": "graphql-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --detectOpenHandles --forceExit",
+    "deploy:heroku": "cd .. && git subtree push --prefix graphqlServer heroku master"
+  },
+  "dependencies": {
+    "apollo-server": "^2.7.0",
+    "graphql": "^14.4.2",
+    "graphql-tools": "^4.0.5",
+    "lodash": "^4.17.15",
+    "mongodb": "^3.2.7"
+  },
+  "devDependencies": {
+    "apollo-server-testing": "^2.7.1",
+    "jest": "^24.8.0"
+  }
+}
