@@ -1,7 +1,7 @@
-const axios = require('axios');
-const get = require('lodash/get');
-const parseXML = require('./parseXML');
-const convertToMeetpleSchema = require('./convertToMeetpleSchema');
+const axios = require("axios");
+const get = require("lodash/get");
+const parseXML = require("./parseXML");
+const convertToMeetpleSchema = require("./convertToMeetpleSchema");
 
 module.exports = async args => {
   if (!args) {
@@ -9,7 +9,7 @@ module.exports = async args => {
   }
 
   const { id, isHot = false } = args;
-  if (!id || !['number', 'string'].includes(typeof id)) {
+  if (!id || !["number", "string"].includes(typeof id)) {
     return {};
   }
 
@@ -21,7 +21,7 @@ module.exports = async args => {
   const gameInXML = request.data;
   const gameInJSON = await parseXML(gameInXML, { trim: true });
 
-  const original = get(gameInJSON, 'items.item[0]');
+  const original = get(gameInJSON, "items.item[0]");
 
   if (!original) {
     return {};

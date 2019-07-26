@@ -1,6 +1,6 @@
-const { MongoClient } = require('mongodb');
-const fetchGameById = require('./fetchGameById');
-const upsertToDatabase = require('./upsertToDatabase');
+const { MongoClient } = require("mongodb");
+const fetchGameById = require("./fetchGameById");
+const upsertToDatabase = require("./upsertToDatabase");
 
 const syncGameToDatabase = async data => {
   const { id } = data.attributes;

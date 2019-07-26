@@ -1,4 +1,4 @@
-const parseString = require('xml2js').parseString;
+const parseString = require("xml2js").parseString;
 
 module.exports = (xml, options) =>
   new Promise((resolve, reject) => {

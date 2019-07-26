@@ -1,15 +1,15 @@
-const sortBy = require('lodash/sortBy');
+const sortBy = require("lodash/sortBy");
 
 module.exports = {
   Query: {
     game: async (obj, { id }, { db }) => {
-      return await db.collection('games').findOne({ id });
+      return await db.collection("games").findOne({ id });
     },
 
     topGames: async (obj, { category, limit }, { db }) => {
       const games = await db
-        .collection('games')
-        .find({ 'ranks.name': category })
+        .collection("games")
+        .find({ "ranks.name": category })
         .toArray();
 
       const sortedGames = sortBy(games, game =>
@@ -21,8 +21,8 @@ module.exports = {
 
     searchGames: async (obj, { name, limit }, { db }) => {
       return await db
-        .collection('games')
-        .find({ name: new RegExp(name, 'i') })
+        .collection("games")
+        .find({ name: new RegExp(name, "i") })
         .limit(limit)
         .toArray();
     }

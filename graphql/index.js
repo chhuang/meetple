@@ -1,8 +1,8 @@
-const { ApolloServer } = require('apollo-server');
-const { mergeSchemas } = require('graphql-tools');
-const get = require('lodash/get');
-const gameSchema = require('./game');
-const connectMongoDB = require('./dataSource/MongoDB');
+const { ApolloServer } = require("apollo-server");
+const { mergeSchemas } = require("graphql-tools");
+const get = require("lodash/get");
+const gameSchema = require("./game");
+const connectMongoDB = require("./dataSource/MongoDB");
 const MONGO_URI = process.env.MONGO_URI;
 
 const createServer = mongoUri => {
@@ -12,10 +12,10 @@ const createServer = mongoUri => {
     }),
     context: async args => {
       const db = await connectMongoDB(mongoUri);
-      const auth = get(args, 'req.headers.authorization');
+      const auth = get(args, "req.headers.authorization");
       return { db, auth };
     },
-    debug: process.env.NODE_ENV !== 'production'
+    debug: process.env.NODE_ENV !== "production"
   });
 };
 

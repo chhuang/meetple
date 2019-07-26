@@ -1,6 +1,6 @@
-const axios = require('axios');
-axios.defaults.adapter = require('axios/lib/adapters/http');
-const cheerio = require('cheerio');
+const axios = require("axios");
+axios.defaults.adapter = require("axios/lib/adapters/http");
+const cheerio = require("cheerio");
 
 const getGameIdsFromOnePage = async url => {
   let ids = [];
@@ -13,22 +13,22 @@ const getGameIdsFromOnePage = async url => {
 
   const $ = cheerio.load(pageRequest.data);
 
-  const collectionItems = $('table#collectionitems');
+  const collectionItems = $("table#collectionitems");
 
-  const collectionItemsTrs = collectionItems.find('tr');
+  const collectionItemsTrs = collectionItems.find("tr");
 
   // loop for each game row
   collectionItemsTrs.each(function() {
-    const gameTitle = $(this).find('.collection_objectname');
+    const gameTitle = $(this).find(".collection_objectname");
 
     const href = $(gameTitle)
-      .find('a')
-      .attr('href');
+      .find("a")
+      .attr("href");
 
-    let id = '';
+    let id = "";
 
     if (href) {
-      id = href.replace(/^\/boardgame\/(\d+)\/.*$/g, '$1');
+      id = href.replace(/^\/boardgame\/(\d+)\/.*$/g, "$1");
       ids.push(id);
     }
   });

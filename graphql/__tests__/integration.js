@@ -1,9 +1,9 @@
-const { createTestClient } = require('apollo-server-testing');
-const { gql } = require('apollo-server');
-const { createServer } = require('..');
+const { createTestClient } = require("apollo-server-testing");
+const { gql } = require("apollo-server");
+const { createServer } = require("..");
 const MONGO_URI_TEST = process.env.MONGO_URI_TEST;
 
-test('fetches single launch', async () => {
+test("fetches single launch", async () => {
   const server = createServer(MONGO_URI_TEST);
 
   const { query } = createTestClient(server);
@@ -23,7 +23,7 @@ test('fetches single launch', async () => {
   `;
 
   const res = await query({ query: GET_GAMES });
-  expect(typeof res.data.game).toStrictEqual('object');
-  expect(typeof res.data.topGames).toStrictEqual('object');
-  expect(typeof res.data.searchGames).toStrictEqual('object');
+  expect(typeof res.data.game).toStrictEqual("object");
+  expect(typeof res.data.topGames).toStrictEqual("object");
+  expect(typeof res.data.searchGames).toStrictEqual("object");
 });
