@@ -10,12 +10,20 @@ test('fetches single launch', async () => {
 
   const GET_GAMES = gql`
     query {
-      games(category: boardgame) {
+      game(id: "220308") {
+        name
+      }
+      topGames(category: boardgame) {
+        name
+      }
+      searchGames(name: "a") {
         name
       }
     }
   `;
 
   const res = await query({ query: GET_GAMES });
-  expect(typeof res.data.games).toStrictEqual('object');
+  expect(typeof res.data.game).toStrictEqual('object');
+  expect(typeof res.data.topGames).toStrictEqual('object');
+  expect(typeof res.data.searchGames).toStrictEqual('object');
 });

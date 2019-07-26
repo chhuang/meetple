@@ -66,6 +66,7 @@ module.exports = gql`
 
   type Query {
     game(id: String!): Game
-    games(category: Category, name: String, limit: Int = 10): [Game]
+    topGames(category: Category = boardgame, limit: Int = 10): [Game]
+    searchGames(name: String!, limit: Int = 10): [Game]
   }
 `;
