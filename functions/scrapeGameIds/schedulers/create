@@ -1,3 +1,5 @@
+// general
+
 gcloud scheduler jobs create http meetple-scrape-boardgame-page-1-2 \
   --schedule "0 0 * * *" \
   --time-zone "Australia/Sydney" \
@@ -26,4 +28,242 @@ gcloud scheduler jobs create http meetple-scrape-boardgame-page-9-10 \
   --schedule "0 1 * * *" \
   --time-zone "Australia/Sydney" \
   --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?from=9&to=10" \
+  --http-method GET
+
+
+
+// strategygames
+
+gcloud scheduler jobs create http meetple-scrape-strategygames-page-1-2 \
+  --schedule "0 2 * * 1" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=strategygames&from=1&to=2" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-strategygames-page-3-4 \
+  --schedule "15 2 * * 1" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=strategygames&from=3&to=4" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-strategygames-page-5-6 \
+  --schedule "30 2 * * 1" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=strategygames&from=5&to=6" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-strategygames-page-7-8 \
+  --schedule "45 2 * * 1" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=strategygames&from=7&to=8" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-strategygames-page-9-10 \
+  --schedule "0 3 * * 1" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=strategygames&from=9&to=10" \
+  --http-method GET
+
+
+
+// partygames
+
+gcloud scheduler jobs create http meetple-scrape-partygames-page-1-2 \
+  --schedule "0 2 * * 2" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=partygames&from=1&to=2" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-partygames-page-3-4 \
+  --schedule "15 2 * * 2" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=partygames&from=3&to=4" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-partygames-page-5-6 \
+  --schedule "30 2 * * 2" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=partygames&from=5&to=6" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-partygames-page-7-8 \
+  --schedule "45 2 * * 2" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=partygames&from=7&to=8" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-partygames-page-9-10 \
+  --schedule "0 3 * * 2" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=partygames&from=9&to=10" \
+  --http-method GET
+
+
+
+// familygames
+
+gcloud scheduler jobs create http meetple-scrape-familygames-page-1-2 \
+  --schedule "0 2 * * 3" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=familygames&from=1&to=2" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-familygames-page-3-4 \
+  --schedule "15 2 * * 3" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=familygames&from=3&to=4" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-familygames-page-5-6 \
+  --schedule "30 2 * * 3" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=familygames&from=5&to=6" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-familygames-page-7-8 \
+  --schedule "45 2 * * 3" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=familygames&from=7&to=8" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-familygames-page-9-10 \
+  --schedule "0 3 * * 3" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=familygames&from=9&to=10" \
+  --http-method GET
+
+
+
+// abstracts
+
+gcloud scheduler jobs create http meetple-scrape-abstracts-page-1-2 \
+  --schedule "0 2 * * 4" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=abstracts&from=1&to=2" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-abstracts-page-3-4 \
+  --schedule "15 2 * * 4" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=abstracts&from=3&to=4" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-abstracts-page-5-6 \
+  --schedule "30 2 * * 4" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=abstracts&from=5&to=6" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-abstracts-page-7-8 \
+  --schedule "45 2 * * 4" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=abstracts&from=7&to=8" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-abstracts-page-9-10 \
+  --schedule "0 3 * * 4" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=abstracts&from=9&to=10" \
+  --http-method GET
+
+
+
+// wargames
+
+gcloud scheduler jobs create http meetple-scrape-wargames-page-1-2 \
+  --schedule "0 2 * * 5" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=wargames&from=1&to=2" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-wargames-page-3-4 \
+  --schedule "15 2 * * 5" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=wargames&from=3&to=4" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-wargames-page-5-6 \
+  --schedule "30 2 * * 5" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=wargames&from=5&to=6" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-wargames-page-7-8 \
+  --schedule "45 2 * * 5" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=wargames&from=7&to=8" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-wargames-page-9-10 \
+  --schedule "0 3 * * 5" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=wargames&from=9&to=10" \
+  --http-method GET
+
+
+
+// childrensgames
+
+gcloud scheduler jobs create http meetple-scrape-childrensgames-page-1-2 \
+  --schedule "0 2 * * 6" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=childrensgames&from=1&to=2" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-childrensgames-page-3-4 \
+  --schedule "15 2 * * 6" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=childrensgames&from=3&to=4" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-childrensgames-page-5-6 \
+  --schedule "30 2 * * 6" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=childrensgames&from=5&to=6" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-childrensgames-page-7-8 \
+  --schedule "45 2 * * 6" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=childrensgames&from=7&to=8" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-childrensgames-page-9-10 \
+  --schedule "0 3 * * 6" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=childrensgames&from=9&to=10" \
+  --http-method GET
+
+
+
+// thematic
+
+gcloud scheduler jobs create http meetple-scrape-thematic-page-1-2 \
+  --schedule "0 2 * * 7" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=thematic&from=1&to=2" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-thematic-page-3-4 \
+  --schedule "15 2 * * 7" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=thematic&from=3&to=4" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-thematic-page-5-6 \
+  --schedule "30 2 * * 7" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=thematic&from=5&to=6" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-thematic-page-7-8 \
+  --schedule "45 2 * * 7" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=thematic&from=7&to=8" \
+  --http-method GET
+
+gcloud scheduler jobs create http meetple-scrape-thematic-page-9-10 \
+  --schedule "0 3 * * 7" \
+  --time-zone "Australia/Sydney" \
+  --uri "https://us-central1-fifth-inkwell-181305.cloudfunctions.net/meetple-scrape-game-ids?category=thematic&from=9&to=10" \
   --http-method GET
