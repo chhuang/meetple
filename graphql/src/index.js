@@ -1,20 +1,21 @@
 require("dotenv").config();
 const { ApolloServer } = require("apollo-server");
-const { mergeSchemas } = require("graphql-tools");
 const get = require("lodash/get");
-const gameSchema = require("./game");
+const schema = require("./modules");
 const connectMongoDB = require("./dataSource/MongoDB");
 const MONGO_URI = process.env.MONGO_URI;
 
 const createServer = mongoUri => {
   return new ApolloServer({
-    schema: mergeSchemas({
-      schemas: [gameSchema]
-    }),
+    schema,
     context: async args => {
       const db = await connectMongoDB(mongoUri);
       const auth = get(args, "req.headers.authorization");
       return { db, auth };
+    },
+    formatError: error => {
+      console.error(error); // for logging
+      return error;
     },
     debug: process.env.NODE_ENV !== "production"
   });

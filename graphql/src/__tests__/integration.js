@@ -9,6 +9,8 @@ test("fetches single launch", async () => {
 
   const { query } = createTestClient(server);
 
+  const x = "x";
+
   const GET_GAMES = gql`
     query {
       game(id: "220308") {
