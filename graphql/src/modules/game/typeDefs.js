@@ -1,8 +1,6 @@
 const { gql } = require("apollo-server");
 
 module.exports = gql`
-  scalar Date
-
   enum Category {
     boardgame
     strategygames
@@ -19,8 +17,8 @@ module.exports = gql`
     id: ID!
     name: String!
     description: String
-    assets: Assets
-    info: Info
+    assets: GameAssets
+    info: GameInfo
     categories: [String]!
     mechanics: [String]!
     families: [String]!
@@ -28,17 +26,17 @@ module.exports = gql`
     designers: [String]!
     artists: [String]!
     publishers: [String]!
-    ranks(category: Category): [Rank]!
-    weight: Weight
-    meta: Meta
+    ranks(category: Category): [GameRank]!
+    weight: GameWeight
+    meta: GameMeta
   }
 
-  type Assets {
+  type GameAssets {
     thumbnail: String
     image: String
   }
 
-  type Info {
+  type GameInfo {
     yearPublished: String
     minPlayers: String
     maxPlayers: String
@@ -48,24 +46,24 @@ module.exports = gql`
     minAge: String
   }
 
-  type Rank {
+  type GameRank {
     name: String!
     friendlyName: String!
     value: String!
     averageRating: String!
   }
 
-  type Weight {
+  type GameWeight {
     average: String!
     count: String!
   }
 
-  type Meta {
+  type GameMeta {
     fetchedAt: Date!
   }
 
-  type Query {
-    game(id: String!): Game
+  extend type Query {
+    game(id: ID!): Game
     topGames(category: Category = boardgame, limit: Int = 10): [Game]
     searchGames(name: String!, limit: Int = 10): [Game]
   }
