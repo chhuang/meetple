@@ -8,6 +8,6 @@ module.exports = async uri => {
     const db = await client.db();
     return db;
   } catch (err) {
-    console.error(err);
+    throw new Error(`MongoDB - connection failed - ${err}`);
   }
 };

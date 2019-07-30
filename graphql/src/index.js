@@ -1,32 +1,22 @@
 require("dotenv").config();
-const { ApolloServer } = require("apollo-server");
-const get = require("lodash/get");
-const schema = require("./modules");
-const connectMongoDB = require("./dataSource/MongoDB");
 const MONGO_URI = process.env.MONGO_URI;
 
-const createServer = mongoUri => {
-  return new ApolloServer({
-    schema,
-    context: async args => {
-      const db = await connectMongoDB(mongoUri);
-      const auth = get(args, "req.headers.authorization");
-      return { db, auth };
-    },
-    formatError: error => {
-      console.error(error); // for logging
-      return error;
-    },
-    debug: process.env.NODE_ENV !== "production"
-  });
-};
-
-module.exports = { createServer };
+const connectMongoDB = require("./databases/MongoDB");
+const createServer = require("./createServer");
 
 (async () => {
-  const server = createServer(MONGO_URI);
+  try {
+    console.log("MongoDB - connecting");
+    const mongoDb = await connectMongoDB(MONGO_URI);
+    console.log("MongoDB - connected");
 
-  const serverInfo = await server.listen({ port: process.env.PORT || 4000 });
+    console.log("Apollo Server - starting");
+    const server = await createServer({ mongoDb });
 
-  console.log(`GraphQL Server started at ${serverInfo.url}`);
+    const serverInfo = await server.listen({ port: process.env.PORT || 4000 });
+
+    console.log(`Apollo Server - started at ${serverInfo.url}`);
+  } catch (err) {
+    console.error(err);
+  }
 })();
