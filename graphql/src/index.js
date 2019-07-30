@@ -37,7 +37,7 @@ const createServer = require("./createServer");
     console.log("Contentful Management - configured");
 
     console.log("Apollo Server - starting");
-    const server = await createServer({
+    const server = createServer({
       mongoDb,
       contentfulDeliveryClient,
       contentfulManagementEnvironment
