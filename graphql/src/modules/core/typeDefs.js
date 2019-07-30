@@ -5,7 +5,5 @@ module.exports = gql`
 
   type Query
 
-  type Mutation {
-    dummy: Date
-  }
+  type Mutation
 `;

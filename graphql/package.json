@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "apollo-server": "^2.7.0",
+    "contentful": "^7.8.2",
+    "contentful-management": "^5.9.0",
     "dotenv": "^8.0.0",
     "graphql": "^14.4.2",
     "graphql-tools": "^4.0.5",
