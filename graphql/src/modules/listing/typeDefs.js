@@ -3,7 +3,7 @@ const { gql } = require("apollo-server");
 module.exports = gql`
   type Listing {
     id: ID!
-    name: String!
+    title: String!
     description: String!
     meta: ListingMeta
   }
@@ -14,8 +14,13 @@ module.exports = gql`
   }
 
   input ListingInput {
-    name: String!
+    title: String!
     description: String!
+  }
+
+  input UpdateListingInput {
+    title: String
+    description: String
   }
 
   extend type Query {
@@ -24,5 +29,7 @@ module.exports = gql`
 
   extend type Mutation {
     createListing(input: ListingInput!): Listing
+    updateListing(id: ID!, input: UpdateListingInput): Listing
+    deleteListing(id: ID!): Boolean
   }
 `;

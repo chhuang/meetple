@@ -1,38 +1,55 @@
+const controllers = require("./controllers");
+
 module.exports = {
   Query: {
-    listing: () => {
-      return {
-        id: "id",
-        name: "name",
-        description: "description"
-      };
+    listing: async (
+      obj,
+      { id },
+      {
+        api: {
+          contentful: { delivery }
+        }
+      }
+    ) => {
+      return await controllers.getListingById({ id, delivery });
     }
   },
 
   Mutation: {
     createListing: async (
       obj,
-      { input: { name, description } },
-      { api: { contentful } }
+      { input },
+      {
+        api: {
+          contentful: { management }
+        }
+      }
     ) => {
-      const entry = await contentful.management.createEntry("listing", {
-        fields: {
-          name: { "en-US": name },
-          description: { "en-US": description }
-        }
-      });
+      return await controllers.createListing({ input, management });
+    },
 
-      const publishedEntry = await entry.publish();
-
-      return {
-        id: publishedEntry.sys.id,
-        name: publishedEntry.fields.name["en-US"],
-        description: publishedEntry.fields.description["en-US"],
-        meta: {
-          createdAt: publishedEntry.sys.createdAt,
-          updatedAt: publishedEntry.sys.updatedAt
+    updateListing: async (
+      obj,
+      { id, input },
+      {
+        api: {
+          contentful: { management }
         }
-      };
+      }
+    ) => {
+      return await controllers.updateListing({ id, input, management });
+    },
+
+    deleteListing: async (
+      obj,
+      { id },
+      {
+        api: {
+          contentful: { management }
+        }
+      }
+    ) => {
+      return await controllers.deleteListing({ id, management });
     }
   }
 };
