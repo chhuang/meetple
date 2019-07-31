@@ -22,6 +22,7 @@ module.exports = gql`
     categories: [String]!
     mechanics: [String]!
     families: [String]!
+    expansions: [GameExpansion]
     implementations: [String]!
     designers: [String]!
     artists: [String]!
@@ -44,6 +45,12 @@ module.exports = gql`
     minPlayTime: String
     maxPlayTime: String
     minAge: String
+  }
+
+  type GameExpansion {
+    id: String
+    value: String
+    game: Game
   }
 
   type GameRank {
