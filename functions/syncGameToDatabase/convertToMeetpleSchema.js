@@ -27,45 +27,50 @@ module.exports = original => {
   const categories = [];
   const mechanics = [];
   const families = [];
+  const expansions = [];
   const implementations = [];
   const designers = [];
   const artists = [];
   const publishers = [];
 
-  original.link.forEach(link => {
-    switch (get(link, "$.type")) {
-      case "boardgamecategory":
-        categories.push(get(link, "$.value"));
-        break;
+  original.link &&
+    original.link.forEach(link => {
+      switch (get(link, "$.type")) {
+        case "boardgamecategory":
+          categories.push(get(link, "$.value"));
+          break;
 
-      case "boardgamemechanic":
-        mechanics.push(get(link, "$.value"));
-        break;
+        case "boardgamemechanic":
+          mechanics.push(get(link, "$.value"));
+          break;
 
-      case "boardgamefamily":
-        families.push(get(link, "$.value"));
-        break;
+        case "boardgamefamily":
+          families.push(get(link, "$.value"));
+          break;
 
-      case "boardgameimplementation":
-        implementations.push(get(link, "$.value"));
-        break;
+        case "boardgameexpansion":
+          expansions.push(get(link, "$"));
 
-      case "boardgamedesigner":
-        designers.push(get(link, "$.value"));
-        break;
+        case "boardgameimplementation":
+          implementations.push(get(link, "$.value"));
+          break;
 
-      case "boardgameartist":
-        artists.push(get(link, "$.value"));
-        break;
+        case "boardgamedesigner":
+          designers.push(get(link, "$.value"));
+          break;
 
-      case "boardgamepublisher":
-        publishers.push(get(link, "$.value"));
-        break;
+        case "boardgameartist":
+          artists.push(get(link, "$.value"));
+          break;
 
-      default:
-        break;
-    }
-  });
+        case "boardgamepublisher":
+          publishers.push(get(link, "$.value"));
+          break;
+
+        default:
+          break;
+      }
+    });
 
   const originalRanks =
     get(original, "statistics[0].ratings[0].ranks[0].rank") || [];
@@ -90,6 +95,7 @@ module.exports = original => {
     categories,
     mechanics,
     families,
+    expansions,
     implementations,
     designers,
     artists,

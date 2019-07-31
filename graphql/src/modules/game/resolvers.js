@@ -31,5 +31,11 @@ module.exports = {
   Game: {
     ranks: (game, { category }) =>
       game.ranks.filter(rank => rank.name === category || !category)
+  },
+
+  GameExpansion: {
+    game: async (game, args, { db }) => {
+      return await db.collection("games").findOne({ id: game.id });
+    }
   }
 };

@@ -20,6 +20,21 @@ const syncGameToDatabase = async data => {
     await upsertToDatabase(db, game);
     console.log(`${game.id} synced`);
 
+    // Find and sync all expansions
+    await Promise.all(
+      game.expansions.map(expansion => {
+        return new Promise(async resolve => {
+          const expansionGame = await fetchGameById({
+            id: expansion.id,
+            isExpansion: true
+          });
+          await upsertToDatabase(db, expansionGame);
+          console.log(`${expansionGame.id} synced (expansion)`);
+          resolve();
+        });
+      })
+    );
+
     await client.close();
   } catch (err) {
     console.error(err);
