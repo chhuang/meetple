@@ -8,7 +8,7 @@ module.exports = async args => {
     return {};
   }
 
-  const { id, isHot = false } = args;
+  const { id, isHot = false, isExpansion = false } = args;
   if (!id || !["number", "string"].includes(typeof id)) {
     return {};
   }
@@ -40,6 +40,7 @@ module.exports = async args => {
   return {
     id: id.toString(),
     isHot,
+    isExpansion,
     ...meetpleSchema,
     meta
   };
