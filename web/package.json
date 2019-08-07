@@ -14,7 +14,7 @@
     "url": "git+https://github.com/chhuang/meetple.git"
   },
   "author": "",
-  "license": "ISC",
+  "private": true,
   "bugs": {
     "url": "https://github.com/chhuang/meetple/issues"
   },

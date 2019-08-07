@@ -6,7 +6,7 @@
     "test": "jest",
     "deploy": "gcloud functions deploy meetple-sync-game-to-database --runtime=nodejs10 --trigger-topic=MEETPLE_SYNC_GAME_TO_DATABASE --entry-point=syncGameToDatabase --timeout=60 --max-instances=2"
   },
-  "license": "ISC",
+  "private": true,
   "dependencies": {
     "axios": "^0.19.0",
     "dotenv": "^8.0.0",
