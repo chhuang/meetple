@@ -37,7 +37,7 @@ const syncGameToDatabase = async data => {
 
     await client.close();
   } catch (err) {
-    console.error(err);
+    console.error(`Error when syncing ${id}`, err);
   } finally {
     return Promise.resolve();
   }
